@@ -16,6 +16,10 @@
 */
 $config['base_url']	= '';
 
+// Definición de constantes
+define( 'BASE_URL', "http://" . $_SERVER['HTTP_HOST'] );
+define( 'URL_URI',  $_SERVER['REQUEST_URI'] );
+
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -69,7 +73,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'spanish';
 
 /*
 |--------------------------------------------------------------------------
@@ -91,7 +95,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
 
 
 /*
@@ -224,7 +228,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'ci$ke';
+$config['encryption_key'] = 'KeyEncEficsi';
 
 /*
 |--------------------------------------------------------------------------
