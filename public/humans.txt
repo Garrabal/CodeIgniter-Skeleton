@@ -1,0 +1,13 @@
+/* TEAM */
+	Founder & Developer: Gabriel Arrabal Campos & Federico Jiménez Clemente
+	Contact: info [at] eficsi.com
+	Twitter: @eficsi
+	G+: https://plus.google.com/u/0/
+	From: Almería, Málaga, Spain.
+
+/* SITE */
+	Last update: 22/01/2014
+	Language: Castellano
+	Doctype: HTML5  
+	Standards: HTML5, CSS3, JavaScript, Jquery, Codeigniter
+	Software: Netbeans, SourceTree, Heidi SQL 

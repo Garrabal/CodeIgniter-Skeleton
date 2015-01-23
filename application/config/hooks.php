@@ -10,6 +10,13 @@
 |
 */
 
+$hook['pre_system'] = array(
+    'class'     => '',
+    'function'  => 'autoload',
+    'filename'  => 'autoload.php',
+    'filepath'  => 'hooks',
+    'params'    => ''
+);
 
 
 /* End of file hooks.php */
