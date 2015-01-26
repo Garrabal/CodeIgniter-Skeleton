@@ -71,7 +71,41 @@ JS;
             echo '<script>' . $script . '</script>';
         }
     }
-}
 
+
+
+
+ function _render_page($view, $data=null, $render=false)
+    {
+
+        // $this->viewdata = (empty($data)) ? $this->data: $data;
+
+        // $view_html = $this->load->view($view, $this->viewdata, $render);
+
+        // if (!$render) return $view_html;
+
+        $data = (empty($data)) ? $this->data : $data;
+        if ( ! $render)
+        {
+            $this->load->library('template');
+
+            if ( ! in_array($view, array('auth/index')))
+            {
+                $this->template->set_layout('pagelet');
+            }
+
+            if ( ! empty($data['title']))
+            {
+                $this->template->set_title($data['title']);
+            }
+
+            $this->template->load_view($view, $data);
+        }
+        else
+        {
+            return $this->load->view($view, $data, TRUE);
+        }
+    }
+}
 /* End of file MY_Controller.php */
 /* Location: ./application/core/MY_Controller.php */

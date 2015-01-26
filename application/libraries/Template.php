@@ -9,22 +9,43 @@ class Template {
 
     private $_ci;
 
-    protected $brand_name = 'CodeIgniter Skeleton';
-    protected $title_separator = ' - ';
-    protected $ga_id = FALSE; // UA-XXXXX-X
+    protected $brand_name       = 'CodeIgniter Skeleton';
+    protected $title_separator  = ' - ';
+    protected $ga_id            = FALSE; // UA-XXXXX-X
 
-    protected $layout = 'default';
+    protected $layout           = 'default';
 
-    protected $title = FALSE;
-    protected $description = FALSE;
+    protected $title            = FALSE;
+    protected $description      = FALSE;
 
-    protected $metadata = array();
+    protected $metadata         = array();
 
-    protected $js = array();
-    protected $css = array();
-
-    function __construct()
+    protected $js               = array();
+    protected $css              = array();
+    protected $config           = array(); 
+//                                   
+      
+        function __construct()
     {
+            $this->config[ 'menu' ] = (object)array(
+                 'elementos' => array(
+                    (object) array(
+                      'label' => 'Inicio'
+                    , 'url' => ''
+                    , 'icono' => 'home'
+                    )
+                  , (object) array(
+                      'label' => 'Usuarios'
+                    , 'url' => 'auth/index'
+                    , 'icono' => 'user'
+                    )
+                  , (object) array(
+                      'label' => 'Contacto'
+                    , 'url' => 'contacto'
+                    , 'icono' => 'envelope'
+                    )
+                  )
+              );
         $this->_ci =& get_instance();
     }
 
@@ -166,7 +187,7 @@ class Template {
         }
         $css = implode('', $css);
 
-        $header = $this->_ci->load->view('header', array(), TRUE);
+        $header = $this->_ci->load->view('header_unitec', $this->config, TRUE);
         $footer = $this->_ci->load->view('footer', array(), TRUE);
         $main_content = $this->_ci->load->view($view, $data, TRUE);
 

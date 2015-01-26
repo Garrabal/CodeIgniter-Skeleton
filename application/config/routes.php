@@ -38,9 +38,10 @@
 |
 */
 
-$route['default_controller'] = "skeleton";
+$route['default_controller'] = "dashboard";
 $route['404_override'] = '';
 
-
+$route['logout'] = "auth/logout";
+$route['login']  = "auth/login";
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

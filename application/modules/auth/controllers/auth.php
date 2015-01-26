@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Auth extends MX_Controller {
+class Auth extends MY_Controller {
 
     public $data;
 
@@ -109,7 +109,7 @@ class Auth extends MX_Controller {
 
         //redirect them to the login page
         $this->session->set_flashdata('message', $this->ion_auth->messages());
-        redirect('auth/login', 'refresh');
+        redirect('', 'refresh');
     }
 
     //change password
@@ -751,36 +751,6 @@ class Auth extends MX_Controller {
         }
     }
 
-    function _render_page($view, $data=null, $render=false)
-    {
-
-        // $this->viewdata = (empty($data)) ? $this->data: $data;
-
-        // $view_html = $this->load->view($view, $this->viewdata, $render);
-
-        // if (!$render) return $view_html;
-
-        $data = (empty($data)) ? $this->data : $data;
-        if ( ! $render)
-        {
-            $this->load->library('template');
-
-            if ( ! in_array($view, array('auth/index')))
-            {
-                $this->template->set_layout('pagelet');
-            }
-
-            if ( ! empty($data['title']))
-            {
-                $this->template->set_title($data['title']);
-            }
-
-            $this->template->load_view($view, $data);
-        }
-        else
-        {
-            return $this->load->view($view, $data, TRUE);
-        }
-    }
+   
 
 }
